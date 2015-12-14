@@ -42,7 +42,7 @@ where a person has a first name and a last name
 * *views* are user interfaces or in our case, HTML and CSS
 
 In a MVC pattern, a controller written in Javascript defines what a
-form does on submission.
+form does on submission. In technical terms, we call this _binding_.
 
 ```
 // bind the view to the model
@@ -76,10 +76,9 @@ controllers start to become confusing and unlogical.
 
 ## The ViewModel in MVVM
 
-The *ViewModel* simplifies the controller by abstracting data binding
-back to the view. In our case, our HTML now defines how the model binds
-to the view and how the view binds to models. This is also known as 
-_two-way data binding_. 
+The *ViewModel* aims to solve problems that MVC introduces by moving
+binding away from the Javascript and back into HTML. A rewrite of
+the above example in Angular would look like:
 
 ```
 <form ng-submit="doSubmit()"></form>
@@ -88,6 +87,6 @@ _two-way data binding_.
 </div>
 ```
 
-Angular brings binding back to the HTML just as it binded CSS styles
-to elements. This way your bindings stay in one place instead of in
-both your HTML and your Javascript files. 
+You can see that there is no Javascript involved and our HTML logic
+goes right back to the view. The code is much cleaner and a lot
+easier to write.
