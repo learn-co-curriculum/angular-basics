@@ -128,14 +128,15 @@ the view. The code becomes much cleaner and a lot easier to write.
 
 The ViewModel controls and maintains states of your view and data. It serves
 as a mediator for communication between your view and your controllers. This
-can be a handful at first, but lets imagine it as a real-world secretary to
+can be a handful at first, but lets imagine it as a real world secretary to
 better understand it.
 
 1. The big boss tells the secretary to inform him of any calls received
 2. The secretary picks up a call and records the purpose of the call
 3. The secretary then tells the big boss about the call
 
-In this case, the:
+In our example, the:
 
-* secretary -> ViewModel
-* big boss is the 
+* secretary is the _ViewModel_
+* big boss is the _controller_
+* the phone is the _view_
