@@ -97,11 +97,12 @@ you need to add a CSS class? You would have edit elements through
 both your HTML templates and Javascript controllers. This is where 
 controllers start to become confusing and unlogical.
 
-## The ViewModel in MVVM
+## The MVVM Pattern
 
-The *ViewModel* aims to solve problems that MVC introduces by moving
-binding away from the Javascript and back into HTML. A rewrite of
-the above example in Angular would look like:
+The Model-View-ViewModel or MVVM patterm aims to solve problems 
+that MVC introduces by moving template logic away from the Javascript 
+and back into HTML. A rewrite of the above example in Angular would 
+look like:
 
 ```html
 <form ng-submit="doSubmit()"></form>
@@ -122,3 +123,19 @@ the above example in Angular would look like:
 You don't necessarily need to know what this code means just yet, but you can 
 see that there is no Javascript involved and our HTML goes right back to 
 the view. The code becomes much cleaner and a lot easier to write.
+
+### The ViewModel
+
+The ViewModel controls and maintains states of your view and data. It serves
+as a mediator for communication between your view and your controllers. This
+can be a handful at first, but lets imagine it as a real-world secretary to
+better understand it.
+
+1. The big boss tells the secretary to inform him of any calls received
+2. The secretary picks up a call and records the purpose of the call
+3. The secretary then tells the big boss about the call
+
+In this case, the:
+
+* secretary -> ViewModel
+* big boss is the 
