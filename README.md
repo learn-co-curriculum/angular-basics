@@ -140,3 +140,12 @@ In our example, the:
 * secretary is the _ViewModel_
 * big boss is the _controller_
 * the phone is the _view_
+
+### Binding
+
+Binding is a way of telling the ViewModel to run code based on certain
+states that the ViewModel receives. In our secretary example, binding can
+be shown where the boss is instructing his secretary. Because the secretary
+is informing the boss and not vice-versa, we call this *one-way data binding*.
+
+Angular's uses _two-way binding_,
