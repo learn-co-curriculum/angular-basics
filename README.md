@@ -119,6 +119,6 @@ the above example in Angular would look like:
 </table>
 ```
 
-You can see that there is no Javascript involved and our HTML logic
-goes right back to the view. The code is much cleaner and a lot
-easier to write.
+You don't necessarily need to know what this code means just yet, but you can 
+see that there is no Javascript involved and our HTML goes right back to 
+the view. The code becomes much cleaner and a lot easier to write.
