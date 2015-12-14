@@ -56,7 +56,7 @@ But lets say we we want to display a table with an unknown
 number of people, we'd have to use Javascript to dynamically
 create HTML elements.
 
-```
+```html
 <table>
   <thead>
     <th>Name</th>
