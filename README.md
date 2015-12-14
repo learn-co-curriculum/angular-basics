@@ -45,11 +45,10 @@ for (var i = 0; i < people.length; i++) {
 $('#people').html(html)
 ```
 
-The *ViewModel* to simplify the controller by bringing the _fusing_
-back to the view. In our frontend case, the HTML now defines our
-model to view and view to model bindings also known as _two-way data
-binding*. You don't necessarily need to know what this means just yet,
-but here's what an example of ViewModel looks like:
+The *ViewModel* simplifies the controller by abstracting data binding
+back to the view. In our case, our HTML now defines how the model binds
+to the view and how the view binds to models. This is also known as 
+_two-way data binding_. 
 
 ```
 <form ng-submit="doSubmit()"></form>
