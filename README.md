@@ -44,7 +44,7 @@ where a person has a first name and a last name
 In a MVC pattern, a controller written in Javascript defines what a
 form does on submission. In technical terms, we call this _binding_.
 
-```
+```javascript
 // bind the view to the model
 $('#new-person-form').on('submit', function(){})
 ```
@@ -103,7 +103,7 @@ The *ViewModel* aims to solve problems that MVC introduces by moving
 binding away from the Javascript and back into HTML. A rewrite of
 the above example in Angular would look like:
 
-```
+```html
 <form ng-submit="doSubmit()"></form>
 <div id="#people">
   <div class="person" ng-repeat="person in people"></div>
