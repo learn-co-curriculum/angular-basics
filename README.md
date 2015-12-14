@@ -25,7 +25,7 @@ MVVM shares the same ideology of models and views.
 *Models* define the structure of data. An example model would be a _person_
 where a person has a first name and a last name.
 
-*Views* are user interfaces
+*Views* are user interfaces or in our case, HTML and CSS.
 
 In order for our views to display models and create them, we would
 use a *controller* to fuse the two together in a MVC pattern. A jQuery
@@ -57,3 +57,7 @@ but here's what an example of ViewModel looks like:
   <div class="person" ng-repeat="person in people"></div>
 </div>
 ```
+
+Angular brings binding back to the HTML just as it binded CSS styles
+to elements. This way your bindings stay in one place instead of in
+both your HTML and your Javascript files. 
