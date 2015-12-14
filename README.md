@@ -105,9 +105,18 @@ the above example in Angular would look like:
 
 ```html
 <form ng-submit="doSubmit()"></form>
-<div id="#people">
-  <div class="person" ng-repeat="person in people"></div>
-</div>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody id="people">
+    <tr ng-repeat="person in people">
+      <td>{{ person.name }}</td>
+      <td>{{ person.email }}</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
 You can see that there is no Javascript involved and our HTML logic
