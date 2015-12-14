@@ -51,20 +51,36 @@ $('#new-person-form').on('submit', function(){})
 
 This is great! This is exactly what we want a controller to
 do. It defines actions and doesn't mix itself up with our view.
-But what happens if we want to render a set of elements that
-share the same HTML and CSS?
+
+But lets say we we want to display a table with an unknown 
+number of people, we'd have to use Javascript to dynamically
+create HTML elements.
 
 ```
-// create new HTML elements based on the 
-// length of the array
-var people = [{...},{...}]
-var html = ''
-for (var i = 0; i < people.length; i++) {
-  var person = people[i]
-  html.append('<div class="person">...</div>')
-}
-// then write it directly to the page
-$('#people').html(html)
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody id="people">
+  </tbody>
+</table>
+
+<script>
+  // create new HTML elements based on the 
+  // length of the array
+  var people = [{...},{...}]
+  var html = ''
+  for (var i = 0; i < people.length; i++) {
+    var person = people[i]
+    html += '<tr class="person">'
+    html += '<td>' + person.name + '</td>'
+    html += '<td>' + person.email + '</td>'
+    html += '</tr>'
+  }
+  // then write it directly to the page
+  $('#people').html(html)
+</script>
 ```
 
 It starts getting messy and we're starting to write HTML inside
