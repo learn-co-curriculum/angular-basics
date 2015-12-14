@@ -67,9 +67,15 @@ create HTML elements.
 </table>
 
 <script>
-  // create new HTML elements based on the 
-  // length of the array
-  var people = [{...},{...}]
+  // for this example, we have a set amount
+  // of people, but lets assume its dynamic
+  var people = [{
+    name:'Steven', 
+    email:'steven@example.com'
+  }]
+  
+  // start creating HTML code for each 
+  // person that we have
   var html = ''
   for (var i = 0; i < people.length; i++) {
     var person = people[i]
@@ -78,6 +84,7 @@ create HTML elements.
     html += '<td>' + person.email + '</td>'
     html += '</tr>'
   }
+  
   // then write it directly to the page
   $('#people').html(html)
 </script>
