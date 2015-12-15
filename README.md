@@ -146,6 +146,8 @@ In our example, the:
 Binding is a way of telling the ViewModel to run code based on certain
 states that the ViewModel receives. In our secretary example, binding can
 be shown where the boss is instructing his secretary. Because the secretary
-is informing the boss and not vice-versa, we call this *one-way data binding*.
+is informing the boss and not vice-versa, we would call this a *one-way 
+binding*.
 
-Angular's uses _two-way binding_,
+Angular also does *two-way bindings* where the secretary and the boss
+would inform each other of new phone calls.
