@@ -124,22 +124,24 @@ You don't necessarily need to know what this code means just yet, but you can
 see that there is no Javascript involved and our HTML goes right back to 
 the view. The code becomes much cleaner and a lot easier to write.
 
-### The ViewModel
+### What is the ViewModel?
 
 The ViewModel controls and maintains states of your view and data. It serves
 as a mediator for communication between your view and your controllers. This
-can be a handful at first, but lets imagine it as a real world secretary to
-better understand it.
+can be a handful at first, but lets imagine it like this:
 
-1. The big boss tells the secretary to inform him of any calls received
-2. The secretary picks up a call and records the purpose of the call
-3. The secretary then tells the big boss about the call
+We have the **big boss** and his **secretary**
 
-In our example, the:
+1. The big boss tells the secretary to let him know about any incoming calls
+2. The secretary picks up a call and records the purpose of the call on a sticky note
+3. The secretary then walks over to the big boss about the call
+4. The big boss then figures out what to do about the call
 
-* secretary is the _ViewModel_
-* big boss is the _controller_
-* the phone is the _view_
+If we break our example up into pieces, the:
+
+* secretary is the _ViewModel_ since she answers and delivers calls
+* big boss is the _controller_ because he determines what to do with the calls
+* the phone is the _view_ since the secretary interacts with it
 
 ### Binding
 
