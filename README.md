@@ -31,33 +31,112 @@ In order for our views to display models and create them, we would
 use a *controller* to fuse the two together in a MVC pattern. A jQuery
 example of a controller would look something like:
 
-```
+```javascript
 // bind the view to the model
 $('#new-person-form').on('submit', function(){})
-
-// bind the model to the view
-var people = [{...},{...}]
-var html = ''
-for (var i = 0; i < people.length; i++) {
-  var person = people[i]
-  html.append('<div class="person">...</div>')
-}
-$('#people').html(html)
 ```
 
-The *ViewModel* to simplify the controller by bringing the _fusing_
-back to the view. In our frontend case, the HTML now defines our
-model to view and view to model bindings also known as _two-way data
-binding*. You don't necessarily need to know what this means just yet,
-but here's what an example of ViewModel looks like:
+This is great! This is exactly what we want a controller to
+do. It defines actions and doesn't mix itself up with our view.
 
+But lets say we we want to display a table with an unknown 
+number of people, we'd have to use Javascript to dynamically
+create HTML elements.
+
+```html
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody id="people">
+  </tbody>
+</table>
+
+<script>
+  // for this example, we have a set amount
+  // of people, but lets assume its dynamic
+  var people = [{
+    name:'Steven', 
+    email:'steven@example.com'
+  }]
+  
+  // start creating HTML code for each 
+  // person that we have
+  var html = ''
+  for (var i = 0; i < people.length; i++) {
+    var person = people[i]
+    html += '<tr class="person">'
+    html += '<td>' + person.name + '</td>'
+    html += '<td>' + person.email + '</td>'
+    html += '</tr>'
+  }
+  
+  // then write it directly to the page
+  $('#people').html(html)
+</script>
 ```
+
+It starts getting messy and we're starting to write HTML inside
+our Javascript files. There are now UI elements in your controller
+which is counter-intuitive to your MVC pattern. What happens when 
+you need to add a CSS class? You would have edit elements through 
+both your HTML templates and Javascript controllers. This is where 
+controllers start to become confusing and unlogical.
+
+## The MVVM Pattern
+
+The Model-View-ViewModel or MVVM patterm aims to solve problems 
+that MVC introduces by moving template logic away from the Javascript 
+and back into HTML. A rewrite of the above example in Angular would 
+look like:
+
+```html
 <form ng-submit="doSubmit()"></form>
-<div id="#people">
-  <div class="person" ng-repeat="person in people"></div>
-</div>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody id="people">
+    <tr ng-repeat="person in people">
+      <td>{{ person.name }}</td>
+      <td>{{ person.email }}</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
-Angular brings binding back to the HTML just as it binded CSS styles
-to elements. This way your bindings stay in one place instead of in
-both your HTML and your Javascript files. 
+You don't necessarily need to know what this code means just yet, but you can 
+see that there is no Javascript involved and our HTML goes right back to 
+the view. The code becomes much cleaner and a lot easier to write.
+
+### What is the ViewModel?
+
+The ViewModel controls and maintains states of your view and data. It serves
+as a mediator for communication between your view and your controllers. This
+can be a handful at first, but lets imagine it like this:
+
+We have the **big boss** and his **secretary**
+
+1. The big boss tells the secretary to let him know about any incoming calls
+2. The secretary picks up a call and records the purpose of the call on a sticky note
+3. The secretary then walks over to the big boss about the call
+4. The big boss then figures out what to do about the call
+
+If we break our example up into pieces, the:
+
+* secretary is the _ViewModel_ since she answers and delivers calls
+* big boss is the _controller_ because he determines what to do with the calls
+* the phone is the _view_ since the secretary interacts with it
+
+### Binding
+
+Binding is a way of telling the ViewModel to run code based on certain
+states that the ViewModel receives. In our secretary example, binding can
+be shown where the boss is instructing his secretary. Because the secretary
+is informing the boss and not vice-versa, we would call this a *one-way 
+binding*.
+
+Angular also does *two-way bindings* where the secretary and the boss
+would inform each other of new phone calls.
