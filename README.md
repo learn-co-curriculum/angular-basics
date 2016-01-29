@@ -140,3 +140,5 @@ binding*.
 
 Angular also does *two-way bindings* where the secretary and the boss
 would inform each other of new phone calls.
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/angular-basics' title='Angular Introduction'>Angular Introduction</a> on Learn.co and start learning to code for free.</p>
